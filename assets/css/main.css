@@ -1303,4 +1303,5 @@ section,
   width: 50px;
   height: 3px;
   background: var(--accent-color);
+  margin-bottom: 12px; /* espace après la barre */
 }

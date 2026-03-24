@@ -226,6 +226,51 @@
   window.addEventListener('load', navmenuScrollspy);
   document.addEventListener('scroll', navmenuScrollspy);
 
+
+  /**
+   * CONTACT
+   */
+  const form = document.querySelector("form");
+
+  if (form) {
+    form.addEventListener("submit", async function(e) {
+      e.preventDefault();
+
+      const loading = form.querySelector(".loading");
+      const sent = form.querySelector(".sent-message");
+      const error = form.querySelector(".error-message");
+
+      loading.style.display = "block";
+      sent.style.display = "none";
+      error.style.display = "none";
+
+      try {
+        const response = await fetch(form.action, {
+          method: "POST",
+          body: new FormData(form),
+          headers: {
+            "Accept": "application/json"
+          }
+        });
+
+        loading.style.display = "none";
+
+        if (response.ok) {
+          sent.style.display = "block";
+          form.reset();
+        } else {
+          error.style.display = "block";
+          error.innerText = "Erreur lors de l'envoi.";
+        }
+      } catch (err) {
+        loading.style.display = "none";
+        error.style.display = "block";
+        error.innerText = "Erreur réseau.";
+      }
+    });
+  }
+
+  
 })();
 
 

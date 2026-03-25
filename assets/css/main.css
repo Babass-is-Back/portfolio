@@ -1314,28 +1314,15 @@ section,
 }
 
 .tech-badge-floating {
-  display: block;          /* chaque badge passe à la ligne */
+  position: absolute;
+  top: 15px;
+  right: 10px;
   background: #306998;
   color: white;
   font-size: 12px;
   padding: 5px 10px;
   border-radius: 20px;
-  margin-bottom: 6px;      /* espace entre badges */
   z-index: 10;
-}
-
-/* Le conteneur des badges est positionné en haut à droite */
-.portfolio-content .tech-badge-floating:first-child {
-  position: absolute;
-  top: 15px;
-  right: 10px;
-}
-
-/* Les suivants se placent automatiquement sous le premier */
-.portfolio-content .tech-badge-floating:not(:first-child) {
-  margin-top: calc(15px + 30px); /* espace sous le premier badge */
-  position: relative;
-  right: 10px;
 }
 
 

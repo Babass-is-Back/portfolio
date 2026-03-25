@@ -1314,14 +1314,13 @@ section,
 }
 
 .tech-badge-floating {
-  position: absolute;
-  top: 15px;
-  right: 10px;
+  display: block;          /* chaque badge passe à la ligne */
   background: #306998;
   color: white;
   font-size: 12px;
   padding: 5px 10px;
   border-radius: 20px;
+  margin-bottom: 6px;      /* espace entre badges */
   z-index: 10;
 }
 
